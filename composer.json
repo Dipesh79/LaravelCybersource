@@ -1,0 +1,27 @@
+{
+    "name": "dipesh79/laravel-cybersource",
+    "description": "Laravel Cybersource Payment Gateway",
+    "keywords": ["laravel", "cybersource", "payment", "gateway"],
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Dipesh79\\LaravelCybersource\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dipesh Khanal",
+            "email": "dipeshkhanal79@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dipesh79\\LaravelCybersource\\LaravelCybersourceProvider"
+            ]
+        }
+    }
+}
