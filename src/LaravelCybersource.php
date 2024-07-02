@@ -108,8 +108,11 @@ class LaravelCybersource
 
     public function checkPaymentStatus(array $request): array
     {
-        if ($request['decision'] = 'ERROR') {
+        if ($request['decision'] == 'ERROR') {
             return [
+                'reference_number' => $request['req_reference_number'],
+                'transaction_uuid' => $request['req_transaction_uuid'],
+                'amount' => $request['req_amount'],
                 'payment_status' => false,
                 'message' => $request['message']
             ];
@@ -118,9 +121,8 @@ class LaravelCybersource
                 'reference_number' => $request['req_reference_number'],
                 'transaction_uuid' => $request['req_transaction_uuid'],
                 'amount' => $request['req_amount'],
-                'decision' => $request['decision'],
-                'reason_code' => $request['payer_authentication_reason_code'],
-                'payment_status' => $request['payer_authentication_reason_code'] == 100
+                'payment_status' => $request['payer_authentication_reason_code'] == 100,
+                'message' => $request['message']
             ];
         }
     }
